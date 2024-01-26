@@ -1,34 +1,38 @@
 VPC : 
 	-->connect your EC2 instance with public VPC
 
-	   VPC Creation:
+	  => VPC Creation:
 		-> go to vpc - create VPC
 		-> select VPC and more
 		-> rest all things keep same and create VPC
 		
-	   Create Public EC2:
+	 =>  Create Public EC2:
 		-> go to EC2 instance and refresh page (TO refresh Security groups)
 		-> Create instance, give Ec2 instance name.
 		-> select .ppk key pair
 		-> edit n/w settings - select created VPC -> Choose public subnet of created VPC.
 		-> enable auto assign ip
-		-> in public instance -> security -> add inbound rule ( http and give any where access)
+		-> in public instance -> security -> add inbound rule All trafic from anywhere.
 	
-	  Create Private EC2:
-		-> now create same second EC2 instance (private Ec2 instance) and select subnet as private subnet of created VPC while creation , rest all things are same as public instance.
+	 =>  Create Private EC2:
+		-> now create same second EC2 instance (private Ec2 instance) and select subnet as private subnet of created VPC while creation , rest all things are same as public instance with add inbound rule All trafic from anywhere.
 		
 		
-		-> To connect private ec2 into public ec2,
+	 =>  To connect private ec2 IP into public ec2:
 		-> connect public ec2 into putty.
 		-> give Commands, 
 		-> sudo su 
 		-> yum install vim 
 		-> vim keypair.pem 
-		-> it will open vim enditor, now convert .ppk(which you have used while instance creation) 			to .pem file and copy .pem file content and paste it here and press :wq
+		-> it will open vim editor, now convert .ppk(which you have used while instance creation) to .pem file and copy .pem file content and paste it here and press :wq
 		-> chmod 600 keypair.pem
 		-> ssh -i keypair.pem ec2-user@private_ec2_ip
 			(replace private_ec2_ip with Your private instace private IP)
 		-> now Private it's connected
 
+
+	Now For Testing,
+	    For Public EC2 ping Test: Copy public IP -> Open CMD -> ping TYPE_PUBLIC_IP_OF_PUBLIC_EC2
+	    For Private Ec2 ping Test: Copy private IP of Private EC2 -> Open public EC2 server terminal from Putty or SSH -> ping TYPE_PRIVATE_IP_OF_PRIVATE_EC2
 
 
