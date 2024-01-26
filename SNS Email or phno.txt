@@ -1,0 +1,24 @@
+Q1. Creating a Topic and Subscribing for topic with email/sms protocol
+
+
+	1. Go to SNS Dashboard.
+	2. Create Topic From dashboard or from Side panel selecting Topics.
+		-> Select any type Standard or FIFO (let's go with standard).
+		-> Enter a name of topic.
+		-> Click on Create topic.
+		
+	3. To create subscription Go to Subscriptions from side panel.
+		-> Click on Create Subscription. 
+		-> Choose Topic ARN which we have created.
+		-> Select Protocol based on your requirement let's choose Email.
+		-> Enter Endpoint value, enter email 
+		-> Click on Create.
+		-> confirm your email or phone number whatever you have selected.
+		
+		
+	4. To Publish Message, Go to Topics, go inside to that Topic from list,
+		-> Click on Publish Message 
+		-> Enter the message subject and message body.
+		-> Click on Publish Message  to send message.
+		
+    Check Mail for received mail.

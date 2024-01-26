@@ -1,0 +1,17 @@
+Q2. Dead letter Queues :
+
+	Dead queue:
+	First Create Simple queue of any type and by given any name like myDeadQ.
+	
+	Main Queue:
+	-> Create new queue,
+	-> Simple Queue of any type by given any name like myPrimeQ 
+	-> scroll down and Enable Dead latter queue then Choose dead letter queue which we have created before and add max number of count failure.
+	
+	Sends 4-5 messages using Main queue(myPrimeQ).
+	
+	Now go to inside of Dead queue(myDeadQ).
+	->  Click on  Start DLQ redrive.
+	-> Choose Redrive to a custom destination.
+	-> Chose main Queue ARN.
+	-> Click on DLQ redrive.

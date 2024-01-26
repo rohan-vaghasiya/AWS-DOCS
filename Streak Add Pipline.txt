@@ -1,0 +1,17 @@
+Q1. Creating a pipeline in streak
+
+Go to streak.com.
+Click on Add to chrome button, add extension in chrome .
+Now to Gmail account.
+You get Streak icon on right corner to sign in with streak to active in this Gmail account.
+Sign in with Google account in stream from gmail dashboard.
+Then you get popup choose CRM in that and rest are anything..
+You will get Streak pipline in left side panel.
+
+Click on streak pipline + button to create custom pipeline
+	Select custom
+	Add Stages and column field name
+	Click on create.
+	
+	Then click on + sign on right corner to Create box, add a box.
+You can send boxes to another stage by change stage from stage dropdown column.
