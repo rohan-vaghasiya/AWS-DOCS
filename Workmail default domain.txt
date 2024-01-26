@@ -1,0 +1,11 @@
+# Creating workmail for organization with default domain
+
+1. Open AWS Workmail	
+2. Create work mail organization 
+    a.	Select free test domain
+    b.	Write alias name & create
+3.	Add users
+    a.	Specify username, display name, password & click on create
+4.	Click on “Amazon WorkMail web application” from organization page to get webmail login page
+5. Enter a email and password of created user in step 3 to login
+
