@@ -1,0 +1,24 @@
+# Launching a Ubuntu instance
+
+1. Open AWS EC2 
+2. Click on "Create instance"
+3. Select Application and OS Images as "ubuntu"
+4. Select existing or crate new Key pair (.pem file)
+5. Edit network settings
+    - VPC :- default
+    - Subnet :- based on requirement (like 1A)
+    - create new or use existing Security group name 
+6. Click on "Launch instance"
+7. After EC2 created Click on "Connect"
+    - Two methods for connection
+    1. Connect through "EC2 Instance Connect" and Click on "Connect" to access AWS's terminal
+    2. Connect through "SSH Client"
+        - Open command prompt where you have .pem file
+        - if .ppk file is there convert to .pem using puttyGen
+            - Launch PuTTYgen application
+            - Click on Load private key.
+            - Select your .ppk file, and then choose Open.
+            - Now, under the Conversions menu, click Export OpenSSH Key (force new file format).
+            - Set a new name with the “.pem” extension and click the “Save” button
+        - Copy "ssh -i "isa-25.pem" ubuntu@ec2-34-227-190-64.compute-1.amazonaws.com" and past in command prompt & press Enter
+            - type "yes" in fingerprint

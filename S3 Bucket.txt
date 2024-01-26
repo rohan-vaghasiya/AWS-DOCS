@@ -1,0 +1,32 @@
+# Creating buckets and versioning
+
+1. Open AWS S3
+2. Click on "Create Bucket"
+3. Select AWS Region :- as per requirement
+4. Give Bucket name 
+5. Object Ownership :- ACLs enabled
+6. Un-mark "Block all public access"
+7. Mark "acknowledge warning" 
+8. Bucket Versioning :- enable
+9. Click on "Create Bucket"
+10. Open bucket then go to the "Permissions" tab -> edit Bucket policy
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadForGetBucketObjects",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::bucket_name/*"
+        }
+    ]
+}
+
+11. Click on "Upload" and then "Add files"
+12. Select file you want to upload 
+13. Click on "Upload"
+14. For Versioning
+    - Upload same file twice in the bucket with different content
+    - Open the file from bucket then go to the "Versions" tab
+    - Access list of version of file

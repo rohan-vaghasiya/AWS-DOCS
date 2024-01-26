@@ -1,0 +1,41 @@
+# Cross region replication
+
+=> create 2 buckets with following steps 1 to 10 and name bucket as 1.original bucket and 2.replica bucket
+1. Open AWS S3
+2. Click on "Create Bucket"
+3. Select AWS Region :- as per requirement
+4. Give Bucket name 
+5. Object Ownership :- ACLs enabled
+6. Un-mark "Block all public access"
+7. Mark "acknowledge warning" 
+8. Bucket Versioning :- enable
+9. Click on "Create Bucket"
+10. Open bucket then go to the "Permissions" tab -> edit Bucket policy
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadForGetBucketObjects",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::bucket_name/*"
+        }
+    ]
+}
+
+11. Open "original bucket" bucket and click on "Upload" and then "Add files"
+12. Select file you want to upload
+13. Click on "Upload"
+
+14. Open the "original bucket" and navigate to "Management" tab
+15. Add new "Replication rule"
+16. specify "Replication rule name"
+17. Choose a rule scope :- "Apply to all objects in the bucket"
+18. Choose the destination :- Choose a bucket in this account -> browse bucket -> select "replica bucket"
+19. select exiting or create new IAM role
+20. Click on "Save"
+21. Select "Yes, replicate existing objects"
+22. Click on "Submit"
+23. Browse "original bucket" for Completion report destination
+24. Click on "Save"
