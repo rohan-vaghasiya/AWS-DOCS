@@ -1,0 +1,19 @@
+VPC : 
+	-->connect your EC2 instance with public VPC
+		-> go to vpc - create VPC
+		-> select VPC and more
+		-> rest all things keep same and create VPC
+		-> go to EC2 instance and refresh page 
+		-> give Ec2 instance name (create public Ec2 instance), select .ppk key pair
+		-> edit n/w settings - select created VPC - it will automatically select subnet(select public subnet)
+		-> enable auto assign ip
+		-> create instance and access it through public DNS in putty.
+		-> now create same second EC2 instance (private Ec2 instance) and select subnet as private subnet while creation , rest all things are same as public instance.
+		-> in public instance -> security -> add inbound rule ( http and give any where access)
+		-> now to connect private ec2 into public ec2 , connect public ec2 into putty
+		-> give, sudo su -> yum install vim -> vim keypair.pem -> it will open vim enditor, now convert .ppk(which you have used while instance creation) to .pem file and copy .pem file content and paste it here and press :wq
+		-> give chmod 600 keypair.pem
+		-> give ssh -i keypair.pem@private_ec2_ip
+		-> now it's connected
+
+	
