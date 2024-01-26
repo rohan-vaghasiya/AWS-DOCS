@@ -1,4 +1,4 @@
-# Hosting a static web site in S3
+# Cloud Distribution with S3 Origin
 
 1. Open AWS S3
 2. Click on "Create Bucket"
@@ -27,8 +27,13 @@
 12. Mark "Static website hosting" enable
 13. Index document :- index.html
 14. Click on "Save changes"
-15. Upload index.html in bucket with HTML content
-16. Open index.html file 
+15. Upload index.html in bucket with HTML content.
+
+16. open Cloud front, create distribution
+17. origin domain :- Domain name of created S3 without "https" , ex:- bucket_name.s3.amazonaws.com
+18. Web Application Firewall (WAF) :- Do not enable security protections
+
+8. visit Distribution domain name to access the site like http://url...../index.html
 
 
 

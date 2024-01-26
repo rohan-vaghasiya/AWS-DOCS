@@ -16,15 +16,14 @@
 	c.	Give username & password
 	d.	Test connection & save
 	e.	If not connecting edit inbound rule of security group
-	i.	MYSQL/AURORA : anywhere IPV4
+		1.	MYSQL/AURORA : anywhere IPV4
+		2.	SSH : anywhere IPV4
+		3.	HTTP : anywhere IPV4
 11.	Create EC2 ubuntu instance using same security group as RDS
-12.	Edit security group
-	a.	SSH : anywhere IPV4
-	b.	HTTP : anywhere IPV4
-13.	Type commands in ec2
-	a.	Sudo su
+12.	Type commands in ec2
+	a.	sudo su
 	b.	apt install mysql-client-core-8.0
-	c.	mysql -h pesu-rds.cd0y6aawu1me.us-east-1.rds.amazonaws.com -P 3306 -u admin -p
+	c.	mysql -h pesu-rds.cd0y6aawu1me.us-east-1.rds.amazonaws.com -P 3306 -u root -p
 	d.	enter password
 
 ==>Migrate data from local to RDS : 
