@@ -20,13 +20,6 @@
     - Service or use case :- Elastic beanstalk
     - got to the role -> permissions -> add permissions -> attach policies(attach following policies)
         - AdministratorAccess
-        - AdministratorAccess-AWSElasticBeanstalk
-        - AWSElasticBeanstalkCustomPlatformforEC2Role
-        - AWSElasticBeanstalkMulticontainerDocker
-        - AWSElasticBeanstalkRoleRDS
-        - AWSElasticBeanstalkRoleWorkerTier
-        - AWSElasticBeanstalkWebTier
-        - AWSElasticBeanstalkWorkerTier
 
 2. Open AWS Elastic beanstalk & "create environment"
 3. Environment tier :- Web server environment
@@ -65,7 +58,11 @@
 27. Copy RDS Endpoint & make changes in the ZIP folder-> dbconnect.php file
     - change host, url, password
 
-28. Open MYSQL workbench
+28. Click on "Upload and deploy"
+29. Choose ZIP file of PHP code from local file system
+30. Click on "Deploy".
+
+31. Open MYSQL workbench
     a.	Give connection name
     b.	Give database endpoint name as HOST
     c.	Give username & password
@@ -73,7 +70,7 @@
     e. connect with database
     f. from left navbar click on "data import"->select self contained file->browse for db.sql file. Below click on New button -> give schema name -> click on "start import"
 
-29. visit "Domain" of EBS to visit website
+32. visit "Domain" of EBS to visit website
     - http://url........./folder_name
 
 

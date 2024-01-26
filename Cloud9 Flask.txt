@@ -11,6 +11,14 @@
 	-- app.run(host='0.0.0.0', port=8080, debug=True)
 
 
+
+
+
+# Developing a Hello world Flask application
+
+run command "pip install flask"
+
+
 ********app.py (example code,put it in root project cloud9 directory)********
 
 from flask import Flask

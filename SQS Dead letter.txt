@@ -11,7 +11,7 @@ Q2. Dead letter Queues :
 	Sends 4-5 messages using Main queue(myPrimeQ).
 	
 	Now go to inside of Dead queue(myDeadQ).
-	->  Click on  Start DLQ redrive.
+	-> Click on Start DLQ redrive.
 	-> Choose Redrive to a custom destination.
 	-> Chose main Queue ARN.
 	-> Click on DLQ redrive.

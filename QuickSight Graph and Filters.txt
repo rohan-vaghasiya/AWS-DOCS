@@ -3,7 +3,7 @@ Q1. Creating a visualization dashboard, Adding filters
 	1. Go to QuickSight Dashboard, 
 	[If you don't have Account in it the create Free Enterprise Edition.]
 		-> Pricing may be later,
-		-> Fill acount details region, name, email rest all as it is and Click on Finish.
+		-> Fill account details region, name, email rest all as it is and Click on Finish.
 		-> click on Go to amazon QuickSight.
 		-> you will be redirected on QuickSight dashboard.
 		     

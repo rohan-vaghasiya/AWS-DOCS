@@ -1,3 +1,5 @@
+# Developing a Hello world Django application
+
 1. Open Cloud9 IDE
 2. Install Django
       -> pip install django
@@ -41,10 +43,9 @@
       -> python3 manage.py migrate
 
 10. Run the development server in myproject directory :
-      -> cd myproject
       -> python3 manage.py runserver 8080
 
-11. Open cloud9 url in browser.
+11. Open cloud9 url in browser and Attach "/hello" to url to access.
 
 ** Add below Fix in myproject/settings.py, if Allowed Hosts or CSRF error :
       ALLOWED_HOSTS = ["*"]
