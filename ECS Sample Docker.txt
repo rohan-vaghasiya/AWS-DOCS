@@ -1,0 +1,61 @@
+Q1. Creating a sample Docker application on ECS
+
+
+	1. Search and Go to Elastic container service (ECS)
+	
+	2. Get started (or click on clusters) 
+	-> Create Cluster 
+	-> give name 
+	-> Click on Create, Wait ……… till cluster creation process completed.
+	
+	3. Go to Task Definition (from side panle) 
+	-> choose Create New Task Definition with JSON (from create new task defination button dropdown) 
+	-> Replace below JSON with default one 
+	-> and Click on Create.
+Replace below given JSON:
+{
+    "family": "sample-fargate", 
+    "networkMode": "awsvpc", 
+    "containerDefinitions": [
+        {
+            "name": "fargate-app", 
+            "image": "public.ecr.aws/docker/library/httpd:latest", 
+            "portMappings": [
+                {
+                    "containerPort": 80, 
+                    "hostPort": 80, 
+                    "protocol": "tcp"
+                }
+            ], 
+            "essential": true, 
+            "entryPoint": [
+                "sh",
+		"-c"
+            ], 
+            "command": [
+                "/bin/sh -c \"echo '<html> <head> <title>Amazon ECS Sample App</title> <style>body {margin-top: 40px; background-color: #333;} </style> </head><body> <div style=color:white;text-align:center> <h1>Amazon ECS Sample App</h1> <h2>Congratulations!</h2> <p>Your application is now running on a container in Amazon ECS.</p> </div></body></html>' >  /usr/local/apache2/htdocs/index.html && httpd-foreground\""
+            ]
+        }
+    ], 
+    "requiresCompatibilities": [
+        "FARGATE"
+    ], 
+    "cpu": "256", 
+    "memory": "512"
+}
+
+	4. Now you will be redirected to one slide from there, Choose Create Service (from Deploy Button dropdown) 
+	-> choose existing cluster (which created) 
+	-> scroll down and enter unique Service Name (eg: dockerservice23) 
+	-> Clock on Create  
+	-> in blue panel you can see view CloudFormation (if your service deploy fail not to be worry click on retry button in cloud formation). Wait till service deployed completely.
+
+	5. Go to clusters (from side panel) 
+	-> click on that created cluster to open
+	-> scroll down 
+	-> select Tasks tab 
+	-> click on running task from list (to go to inside) 
+	-> In Configuration tab there is Public IP copy that and Paste in browser (It will not work due to security issue)
+	-> click on Networking tab -> click on Security Groups (which is selected by default) -> on that add new inbound rule http, anywhere-> copy Public IP -> paste on new tab 
+	
+	6. Now check that copied public IP will run!!!!!!!!!!!

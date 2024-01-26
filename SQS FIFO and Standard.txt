@@ -1,0 +1,30 @@
+Q1. Creating FIFO and Standard Queues
+
+(FIFO and Standard creation both same just need to update one selection Queue type)
+
+Create Queue: 
+• Open the Amazon SQS console 
+• Choose Create queue. 
+• On the Create queue page, ensure that you set the correct region. 
+• The Standard queue type is selected by default. Choose FIFO or Standard based on required.
+• Enter a Name for your queue with .fifo extension. 
+• You can create your queue with the default parameters (like delay times, ect..),
+	You can set default parameters its optional if required.
+	- Retention period : Specifies the length of time that messages are retained in the queue after they are received. 
+	- Delivery Delay: Specifies the delay in seconds before a message becomes available for processing after it is sent to the queue.
+	
+• scroll down to Click on Create Queue. 
+• Amazon SQS creates the queue and displays the queue's Details page
+
+Send message :
+ • From the left navigation pane, choose Queues. From the queue list, select the queue that you created. 
+•  From Actions, choose Send and receive messages. 
+• The console displays the Send and receive messages page. 
+• Enter text in the Message body, 
+• If This queue is FIFO you have enter Message group id, Message Deduplication ID for the queue. 
+• Choose Send message. 
+
+To Receive message:
+	On above same page scroll down till receive messages.
+	Click on Pull for request message will show and pull request take times what ever is set in pulling duration.
+	

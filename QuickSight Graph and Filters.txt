@@ -1,0 +1,29 @@
+Q1. Creating a visualization dashboard, Adding filters
+
+	1. Go to QuickSight Dashboard, 
+	[If you don't have Account in it the create Free Enterprise Edition.]
+		-> Pricing may be later,
+		-> Fill acount details region, name, email rest all as it is and Click on Finish.
+		-> click on Go to amazon QuickSight.
+		-> you will be redirected on QuickSight dashboard.
+		     
+	2. To create new Analysis
+		-> Click on New analysis
+		-> Click on New Datasets
+		-> Click on Upload File and upload
+		-> Confirm data by clicking Next
+		-> Click on visualize.
+		-> Click on create
+		
+	3. On the top left corner there is Many Icons tools to manage analysis board,
+		Datasets, Visuals, Filer, Property, Insights, etc.…
+		
+	4. In Datasets box there is all the fields which you can drag and drop or select fields for add and remove in visuals bases on value and categorical data.
+	5. IN Visuals box you can select any graph bases on requirements.
+	6. To add Filer you can click on filer in top icons bar of Filter
+		a. Select field on which you want to add filter.
+		b. Then click on added filter
+		c. If numeric value then you can add filer according to that otherwise categorical option will be show based on fields value. You can also add OR condition filer fields from bottom of the any related created filter Click on Add Filer condition.
+		d. If you want to add AND condition filter you can add this by ADD button from all Filters box.
+	7. To publish You can Click on Publish button on Top Right corner by giving name.
+	8. You can export diagram by clicking on File -> Export PDF [Wait untill process completed] -> then click on Download in Toaster.
