@@ -1,0 +1,33 @@
+# Launching a Static Web server
+
+1. Open AWS EC2 
+2. Click on "Create instance"
+3. Select Application and OS Images as "AWS AMI"
+4. Select existing or crate new key pair (.pem file)
+5. Edit network settings
+    - VPC :- default
+    - Subnet :- based on requirement (like 1A)
+    - create new or use existing Security group name
+        - Add inbound and outbound rule 
+            1. HTTP/anywhere IPV4
+            2. HTTPS/anywhere IPV4
+            3. SSH/anywhere IPV4
+            4. All Traffic/anywhere IPV4
+        
+6. Click on "Launch instance"
+7. After EC2 created Click on "Connect" and Connect through "EC2 Instance Connect"
+8. Run following command in terminal
+    sudo su
+    yum update -y
+    yum install httpd -y
+    service httpd start
+    cd  /var/www/html
+    nano index.html
+        - write html content in html file
+        - To save file press :- ctrl+O and press Enter
+        - To exit from editor press :- ctrl+X 
+    service httpd restart
+    chkconfig httpd on
+
+9. Visit Public IPv4 DNS of EC2 to view index.html file content
+    - if not work try with http://url... instead https://url...

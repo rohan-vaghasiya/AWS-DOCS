@@ -1,0 +1,22 @@
+# Launching a Windows instance
+
+1. Open AWS EC2 
+2. Click on "Create instance"
+3. Select Application and OS Images as "windows"
+4. Select existing or crate new Key pair (.pem file)
+5. Edit network settings
+    - VPC :- default
+    - Subnet :- based on requirement (like 1A)
+    - create new or use existing Security group
+        - Add inbound and outbound rule (All Traffic/anywhere IPV4)
+6. Click on "Launch instance"
+7. After EC2 created Click on "Connect"
+8. Connect through "RDP Client"
+9. Click on "Get password"
+10. Click on "Upload private key file" (.pem file)
+11. Click on "Decrypt Password"
+12. Copy password
+13. Click on "Download remote desktop file"
+14. Open RDP file which is downloaded & click on "connect"
+15. Add a password which is copied in step 12 & click on "ok"
+16. Click "yes" and it will connect to the server

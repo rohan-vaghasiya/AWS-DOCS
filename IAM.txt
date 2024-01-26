@@ -1,0 +1,21 @@
+# Creating a IAM User, Giving Rights
+
+1. Open AWS IAM dashboard
+2. Go to "Users" tab from left navigation bar
+3. Click on "create user" button
+4. mentioned "User name"
+5. Tick mark on "Provide user access to the AWS Management Console"
+6. Mark "Are you providing console access to a person?" option as per requirement
+    1. For AWS dashboard mark "Specify a user in Identity Center"
+    2. For programmatic access mark "I want to create an IAM user"
+        - set the password for the user
+7. Click on next
+8. Set permissions
+    - Select "Attach policies directly"
+    - Create or attach request policies like AdministratorAccess.
+    - Click on next
+9. Review configuration
+10. Click on create user
+11. Click on Download .csv file
+12. Visit "Console sign-in URL"
+    - Give username and password to access IAM user dashboard

@@ -1,0 +1,33 @@
+# Hosting a static web site in S3
+
+1. Open AWS S3
+2. Click on "Create Bucket"
+3. Select AWS Region :- as per requirement
+4. Give Bucket name 
+5. Object Ownership :- ACLs enabled
+6. Un-mark "Block all public access"
+7. Mark "acknowledge warning" 
+8. Bucket Versioning :- enable
+9. Click on "Create Bucket"
+10. Open bucket then go to the "Permissions" tab -> edit Bucket policy
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadForGetBucketObjects",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::bucket_name/*"
+        }
+    ]
+}
+
+11. Click on "properties" tab -> Static website hosting -> Click on "edit" button
+12. Mark "Static website hosting" enable
+13. Index document :- index.html
+14. Click on "Save changes"
+
+
+
+
