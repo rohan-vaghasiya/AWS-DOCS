@@ -8,8 +8,8 @@ Q1. Creating a sample Docker application on ECS
 	-> give name 
 	-> Click on Create, Wait ……… till cluster creation process completed.
 	
-	3. Go to Task Definition (from side panle) 
-	-> choose Create New Task Definition with JSON (from create new task defination button dropdown) 
+	3. Go to Task Definition (from side panel) 
+	-> choose Create New Task Definition with JSON (from create new task definition button dropdown) 
 	-> Replace below JSON with default one 
 	-> and Click on Create.
 Replace below given JSON:
@@ -47,7 +47,7 @@ Replace below given JSON:
 	4. Now you will be redirected to one slide from there, Choose Create Service (from Deploy Button dropdown) 
 	-> choose existing cluster (which created) 
 	-> scroll down and enter unique Service Name (eg: dockerservice23) 
-	-> Clock on Create  
+	-> Click on Create  
 	-> in blue panel you can see view CloudFormation (if your service deploy fail not to be worry click on retry button in cloud formation). Wait till service deployed completely.
 
 	5. Go to clusters (from side panel) 

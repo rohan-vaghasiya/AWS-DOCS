@@ -1,4 +1,3 @@
-
 Q2. Creating a Topic and Making SQS as endpoint
 
 
