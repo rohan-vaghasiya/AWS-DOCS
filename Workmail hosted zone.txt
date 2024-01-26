@@ -1,2 +1,0 @@
-# Creating workmail for organization with hosted zone
-

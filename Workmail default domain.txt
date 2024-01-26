@@ -8,4 +8,3 @@
     a.	Specify username, display name, password & click on create
 4.	Click on “Amazon WorkMail web application” from organization page to get webmail login page
 5. Enter a email and password of created user in step 3 to login
-
