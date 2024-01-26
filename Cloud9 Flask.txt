@@ -1,0 +1,28 @@
+1. Create Environment in Cloud9
+2. Open Cloud9 IDE.
+      -- firstly you have to install Flask via pip
+      -- pip install flask
+3. Import Project or Create Sample app.py or you can clone repos and upload local folders
+4. Navigate to you folder directory via terminal app
+      -- cd (command)
+5. then you have to run app.py via below command:
+      -- flask run --host=127.0.0.1 --port=8080
+6*.  alternatively you can mention/replace this line in app.py as
+	-- app.run(host='0.0.0.0', port=8080, debug=True)
+
+
+********app.py (example code,put it in root project cloud9 directory)********
+
+from flask import Flask
+app=Flask(__name__)
+
+@app.route("/")
+
+def hello():
+    return "Hello World Flask Cloud9"
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=8080, debug=True)
+
+*** run command in terminal :  python3 app.py
+*** alternate command : flask run --host=127.0.0.1 --port=8080
