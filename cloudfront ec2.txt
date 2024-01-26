@@ -1,0 +1,10 @@
+==>cloud front with EC2 : 
+->create 1 ec2 instance with security as http and https allow and configure one any static or dynamic server as your wish.
+->access your server with ec2 end point, working then good to go.
+->go to cloud front - create distribution -> in domain name select ec2 configured instance
+->tick http protocol
+->in cache key & origin request ->select legacy cache settings
+->in that assign All to Headers,query strings and cookie.
+->in reponse header policy select option = CORS with preflight & securityheaderpolicy
+->web application firewall set to "do not enable security protection"
+->create distribution and access it.
