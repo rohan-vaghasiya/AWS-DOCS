@@ -1,0 +1,54 @@
+1. Open Cloud9 IDE
+2. Install Django
+      -> pip install django
+
+3. Create Django Project
+      -> django-admin startproject myproject
+
+4. Create Django App
+      -> cd myproject
+      -> python3 manage.py startapp myapp
+
+5. In the file myproject/settings.py, add the name of the app myapp to the INSTALLED_APPS list:
+      -> INSTALLED_APPS = [
+             # Add this line in your settings.py file inside myproject folder
+             'myapp',
+             # ...
+            ]
+
+6. In the file myapp/views.py, add the following code:
+      -> from django.http import HttpResponse
+         def hello(request):
+            return HttpResponse("Hello, World!")
+
+7. In this file myapp/urls.py, add the following code:
+      -> from django.urls import path
+         from . import views
+         urlpatterns = [
+            path('hello/', views.hello, name='hello'),
+         ]
+
+8. In this myproject/urls.py file add the following code:
+      -> from django.contrib import admin
+         from django.urls import path, include
+         urlpatterns = [
+            path('admin/', admin.site.urls),
+            path('', include('myapp.urls')),
+         ]
+
+9. Apply Auth Migrations for Changes:
+      -> python3 manage.py makemigrations
+      -> python3 manage.py migrate
+
+10. Run the development server in myproject directory :
+      -> cd myproject
+      -> python3 manage.py runserver 8080
+
+11. Open cloud9 url in browser.
+
+** Add below Fix in myproject/settings.py, if Allowed Hosts or CSRF error :
+      ALLOWED_HOSTS = ["*"]
+
+      CORS_ALLOWED_ORIGINS = ["*"]
+
+      CSRF_TRUSTED_ORIGINS=["https://*.vfs.cloud9.us-east-1.amazonaws.com"]
