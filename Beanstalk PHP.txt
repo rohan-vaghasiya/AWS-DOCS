@@ -1,0 +1,81 @@
+# Hosting a PHP application
+
+1. Open IAM and create 2 roles
+    a. EC2 role
+    - Trusted entity type :- AWS service
+    - Service or use case :- EC2
+    - Press Next & create role
+    - got to the role -> permissions -> add permissions -> attach policies(attach following policies)
+        - AdministratorAccess
+        - AdministratorAccess-AWSElasticBeanstalk
+        - AWSElasticBeanstalkCustomPlatformforEC2Role
+        - AWSElasticBeanstalkMulticontainerDocker
+        - AWSElasticBeanstalkRoleRDS
+        - AWSElasticBeanstalkRoleWorkerTier
+        - AWSElasticBeanstalkWebTier
+        - AWSElasticBeanstalkWorkerTier
+
+    b. Elastic beanstalk role
+    - Trusted entity type :- AWS service
+    - Service or use case :- Elastic beanstalk
+    - got to the role -> permissions -> add permissions -> attach policies(attach following policies)
+        - AdministratorAccess
+        - AdministratorAccess-AWSElasticBeanstalk
+        - AWSElasticBeanstalkCustomPlatformforEC2Role
+        - AWSElasticBeanstalkMulticontainerDocker
+        - AWSElasticBeanstalkRoleRDS
+        - AWSElasticBeanstalkRoleWorkerTier
+        - AWSElasticBeanstalkWebTier
+        - AWSElasticBeanstalkWorkerTier
+
+2. Open AWS Elastic beanstalk & "create environment"
+3. Environment tier :- Web server environment
+4. Application name :- specify name
+5. Platform :- PHP & press next
+6. Existing service roles :- select Elastic beanstalk role created in step 1.b
+7. EC2 key pair :- select new or existing key pair
+8. EC2 instance profile :- select EC2 role created in step 1.a & press next
+9. VPC :- default
+10. Public IP address :- activated
+11. Instance subnets :- any one availability zone (1A)
+12. Database subnets :- any one availability zone (1A) & press next
+13. EC2 security groups :- default
+14. Instance types :- remove "t3.small" & press next
+15. Proxy server :- apache
+16. press next & press submit
+
+17.	Open RDS
+18.	Choose database creation method :-  Standard create
+19.	Choose engine option :- MySQL
+20.	Choose template :- Free tier
+21.	Set instance identifier :- “your choice” (ISA-rds)
+22.	Set Master user name :- “your choice” (root)
+23.	Set Master password :- “your choice” (root1234)
+24.	Connectivity
+    a. Set public access :- YES
+    b. Availability Zone :- same as beanstalk application (1A)
+25.	Review the cost & Click on create.
+26. Edit inbound and outbound rule of security group of RDS.
+    1. HTTP/anywhere IPV4
+    2. HTTPS/anywhere IPV4
+    3. SSH/anywhere IPV4
+    4. MySQL/Aurora / anywhere IPV4
+    4. All Traffic/anywhere IPV4
+
+27. Copy RDS Endpoint & make changes in the ZIP folder-> dbconnect.php file
+    - change host, url, password
+
+28. Open MYSQL workbench
+    a.	Give connection name
+    b.	Give database endpoint name as HOST
+    c.	Give username & password
+    d.	Test connection & save
+    e. connect with database
+    f. from left navbar click on "data import"->select self contained file->browse for db.sql file. Below click on New button -> give schema name -> click on "start import"
+
+29. visit "Domain" of EBS to visit website
+    - http://url........./folder_name
+
+
+
+

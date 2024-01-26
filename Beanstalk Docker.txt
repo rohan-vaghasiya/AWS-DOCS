@@ -1,0 +1,61 @@
+# Hosting a PHP application
+
+1. Open IAM and create 2 roles
+    a. EC2 role
+    - Trusted entity type :- AWS service
+    - Service or use case :- EC2
+    - Press Next & create role
+    - got to the role -> permissions -> add permissions -> attach policies(attach following policies)
+        - AdministratorAccess
+        - AdministratorAccess-AWSElasticBeanstalk
+        - AWSElasticBeanstalkCustomPlatformforEC2Role
+        - AWSElasticBeanstalkMulticontainerDocker
+        - AWSElasticBeanstalkRoleRDS
+        - AWSElasticBeanstalkRoleWorkerTier
+        - AWSElasticBeanstalkWebTier
+        - AWSElasticBeanstalkWorkerTier
+
+    b. Elastic beanstalk role
+    - Trusted entity type :- AWS service
+    - Service or use case :- Elastic beanstalk
+    - got to the role -> permissions -> add permissions -> attach policies(attach following policies)
+        - AdministratorAccess
+        - AdministratorAccess-AWSElasticBeanstalk
+        - AWSElasticBeanstalkCustomPlatformforEC2Role
+        - AWSElasticBeanstalkMulticontainerDocker
+        - AWSElasticBeanstalkRoleRDS
+        - AWSElasticBeanstalkRoleWorkerTier
+        - AWSElasticBeanstalkWebTier
+        - AWSElasticBeanstalkWorkerTier
+
+2. Open AWS Elastic beanstalk & "create environment"
+3. Environment tier :- Web server environment
+4. Application name :- specify name
+5. Platform :- Docker, Platform branch :- ECS running on 64bit Amazon Linux 2 & press next
+6. Existing service roles :- select Elastic beanstalk role created in step 1.b
+7. EC2 key pair :- select new or existing key pair
+8. EC2 instance profile :- select EC2 role created in step 1.a & press next
+9. VPC :- default
+10. Public IP address :- activated
+11. Instance subnets :- any one availability zone (1A)
+12. Database subnets :- any one availability zone (1A) & press next
+13. EC2 security groups :- default
+14. Instance types :- remove "t3.small" & press next
+15. press next & press submit
+
+16. Click on "Upload and deploy"
+17. Choose file ZIP folder of Docker from local file system
+18. Click on "Deploy".
+19. visit Domain of Elastic beanstalk for access website
+
+
+
+=> optional incase of error
+1. connect to EC2 created with beanstalk
+2. run following command
+    - ls /var/app/current
+    - cd /var/app/current/php-app/
+    - cat index.php (check if the content is updated or not)
+
+
+
