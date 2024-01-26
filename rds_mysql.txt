@@ -1,0 +1,34 @@
+==>RDS connection with MYSQL in local : 
+1.	Open RDS
+2.	Choose database creation method:  Standard create
+3.	Choose engine option: MySQL
+4.	Choose template: Free tier
+5.	Set instance identifier: “your choice” (ISA-rds)
+6.	Set Master user name: “your choice” (root)
+7.	Set Master password: “your choice” (root1234)
+8.	Connectivity
+	a.	Set public access: YES
+	b.	VPC security group: select create new, 
+9.	Review the cost & Click on create.
+10.	Open MYSQL workbench
+	a.	Give connection name
+	b.	Give database endpoint name as HOST
+	c.	Give username & password
+	d.	Test connection & save
+	e.	If not connecting edit inbound rule of security group
+	i.	MYSQL/AURORA : anywhere IPV4
+11.	Create EC2 ubuntu instance using same security group as RDS
+12.	Edit security group
+	a.	SSH : anywhere IPV4
+	b.	HTTP : anywhere IPV4
+13.	Type commands in ec2
+	a.	Sudo su
+	b.	apt install mysql-client-core-8.0
+	c.	mysql -h pesu-rds.cd0y6aawu1me.us-east-1.rds.amazonaws.com -P 3306 -u admin -p
+	d.	enter password
+
+==>Migrate data from local to RDS : 
+->connect rds instance locally using mysql workbench as mentioned in above description.
+->go to administration ->data import/Restore
+->select import from self-contained file and select sql file that you want to import
+->go to import progress and start import and your db will be imported.
