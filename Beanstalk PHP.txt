@@ -56,7 +56,7 @@
     4. All Traffic/anywhere IPV4
 
 27. Copy RDS Endpoint & make changes in the ZIP folder-> dbconnect.php file
-    - change host, url, password
+    - change host, username, password
 
 28. Click on "Upload and deploy"
 29. Choose ZIP file of PHP code from local file system
